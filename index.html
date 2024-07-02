@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+            /* Animasi smooth scroll */
+        }
+
+        .navbar {
+            background-color: rgba(51, 51, 51, 0.7);
+            /* Warna transparan dengan opasitas */
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            /* Menempatkan navbar di atas konten */
+            transition: background-color 0.3s ease;
+            /* Transisi saat mengubah warna latar belakang */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .section {
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            /* background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        #project1 .container {
+            padding: 150px;
+        }
+
+        .container .content {
+            flex: 1;
+            padding-right: 400px;
+        }
+
+        .container .content h2 {
+            color: #ffffff;
+            font-size: 7em;
+            margin-bottom: 10px;
+        }
+
+        .container .content p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .container .photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: auto;
+        }
+
+        .container .content1 {
+            flex: 1;
+            text-align: left;
+            align-items: start;
+            margin-left: auto;
+        }
+
+        .container .content1 h2 {
+            color: #42169B;
+            margin-bottom: 10px;
+            font-size: 60px;
+            text-align: left;
+            /* Pastikan h2 diratakan ke kiri */
+        }
+
+        .container .content1 p {
+            color: #000000;
+            font-size: 19px;
+            margin-bottom: 20px;
+            text-align: left;
+            /* Pastikan paragraf diratakan ke kiri */
+        }
+
+        .container .photo1 {
+            width: 560px;
+            height: 330px;
+            overflow: hidden;
+            margin-right: auto;
+        }
+
+        .container .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .photo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .section h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #777;
+            text-align: center;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .project1 {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1554%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1555%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1440 0L920.27 0L1440 235.94z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M920.27 0L1440 235.94L1440 400.3L412.41999999999996 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M412.4200000000001 0L1440 400.3L1440 456.38L332.58000000000004 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M332.58000000000015 0L1440 456.38L1440 472.06L124.47000000000014 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L400.04 560L0 427.56z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 427.56L400.04 560L487.47 560L0 213.79z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 213.78999999999996L487.47 560L884.81 560L0 142.88999999999996z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 142.89L884.81 560L1278.05 560L0 110.54999999999998z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1554'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='15.28%25' y1='-39.29%25' x2='84.72%25' y2='139.29%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1555'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(122%2c 2%2c 246%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+            background-size: cover;
+        }
+
+        .btn {
+            background-color: transparent;
+            border: 4px solid #fff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .custom-section {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./images/buku.jpg') no-repeat center center/cover;
+        }
+
+        .custom-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            filter: grayscale(100%);
+        }
+
+        .custom-content {
+            position: relative;
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .custom-column {
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .custom-column h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .custom-column p {
+            font-size: 16px;
+        }
+
+        .new-section {
+            padding: 40px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .new-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            /* background-color: #fff; */
+            background-color: rgba(66, 22, 155, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+        }
+
+        .card-title {
+            padding: 10px;
+            font-size: 24px;
+            background-color: #42169B;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(35, 13, 80);
+            /* Warna dan opacity background subtitle */
+            color: #f0f0f0;
+            /* Warna teks subtitle */
+            font-size: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-subtitle {
+            transform: translateY(0);
+        }
+
+        .portfolio-section {
+            padding: 40px;
+            background-color: #e0e0e0;
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .tile {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tile1 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .tile2 {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .tile3 {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+
+        .tile4 {
+            grid-row: span 2;
+            grid-column: span 1;
+        }
+
+        .tile5 {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .tile6 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .tile7 {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .tile8 {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+
+        .tile9 {
+            grid-row: span 2;
+            grid-column: span 1;
+        }
+
+        .tile10 {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .tile11 {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+
+        .tile12 {
+            grid-row: span 2;
+            grid-column: span 1;
+        }
+
+        .contact-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 40px;
+            background: url('./images/kontak.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            filter: grayscale(100%);
+            z-index: 1;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .contact-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-content a {
+            color: #854afb;
+            text-decoration: none;
+        }
+
+        .contact-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#project1">Tentang Saya</a>
+        <a href="#project2">Kemampuan</a>
+        <a href="#project3">Pekerjaan</a>
+        <a href="#project4">Portofolio</a>
+        <a href="#project5">Kontak</a>
+    </div>
+
+    <div id="" class="section project1">
+        <div class="container">
+            <div class="content">
+                <h2>Personal<br>Portfolio</h2>
+                <a href="#project2" class="btn" onclick="scrollToProject2()">Tentang Saya</a>
+            </div>
+            <div class="photo">
+                <img src="./images/dokter.jpg" alt="Foto Diri">
+            </div>
+        </div>
+    </div>
+    <div id="project1" class="section">
+        <div class="container">
+            <div class="content1">
+                <h2>Tentang Saya</h2>
+                <p>Anda dapat menemukan informasi terbaru mengenai kami pada halaman ini. Perusahaan kami terus
+                    berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah...</p>
+                <a href="#project2" class="btn" onclick="scrollToProject2()">Tentang Saya</a>
+            </div>
+            <div class="photo1">
+                <img src="./images/bekerja.jpg" alt="Foto Kerja">
+            </div>
+        </div>
+    </div>
+    <div id="project2" class="custom-section">
+        <div class="custom-content">
+            <div class="custom-column">
+                <h2>Judul 1</h2>
+                <p>Subjudul 1</p>
+            </div>
+            <div class="custom-column">
+                <h2>Judul 2</h2>
+                <p>Subjudul 2</p>
+            </div>
+            <div class="custom-column">
+                <h2>Judul 3</h2>
+                <p>Subjudul 3</p>
+            </div>
+        </div>
+    </div>
+    <div id="project3" class="new-section">
+        <h2>Judul Section</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="./images/desain.jpeg" alt="Gambar 1">
+                <div class="card-title">Desain</div>
+                <div class="card-subtitle">Anda dapat menemukan informasi terbaru mengenai kami pada halaman ini.
+                    Perusahaan kami terus
+                    berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah...</div>
+            </div>
+            <div class="card">
+                <img src="./images/konsultasi.jpg" alt="Gambar 2">
+                <div class="card-title">Konsultasi</div>
+                <div class="card-subtitle">Anda dapat menemukan informasi terbaru mengenai kami pada halaman ini.
+                    Perusahaan kami terus
+                    berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah...</div>
+            </div>
+            <div class="card">
+                <img src="./images/fotografi.jpg" alt="Gambar 3">
+                <div class="card-title">fotografi</div>
+                <div class="card-subtitle">Anda dapat menemukan informasi terbaru mengenai kami pada halaman ini.
+                    Perusahaan kami terus
+                    berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah...</div>
+            </div>
+        </div>
+    </div>
+    <div id="project4" class="portfolio-section">
+        <h2>Portofolio</h2>
+        <div class="portfolio-tiles">
+            <div class="tile tile1"><img src="./images/bekerja.jpg" alt="Foto 1"></div>
+            <div class="tile tile2"><img src="./images/buku.jpg" alt="Foto 2"></div>
+            <div class="tile tile3"><img src="./images/desain.jpeg" alt="Foto 3"></div>
+            <div class="tile tile4"><img src="./images/dokter.jpg" alt="Foto 4"></div>
+            <div class="tile tile5"><img src="./images/fotografi.jpg" alt="Foto 5"></div>
+            <div class="tile tile6"><img src="./images/konsultasi.jpg" alt="Foto 6"></div>
+            <div class="tile tile7"><img src="./images/bekerja.jpg" alt="Foto 7"></div>
+            <div class="tile tile8"><img src="./images/buku.jpg" alt="Foto 8"></div>
+            <div class="tile tile9"><img src="./images/desain.jpeg" alt="Foto 9"></div>
+            <div class="tile tile10"><img src="./images/dokter.jpg" alt="Foto 10"></div>
+            <div class="tile tile11"><img src="./images/fotografi.jpg" alt="Foto 11"></div>
+            <div class="tile tile12"><img src="./images/konsultasi.jpg" alt="Foto 12"></div>
+        </div>
+    </div>
+    <div id="project5" class="contact-section">
+        <div class="contact-content">
+            <h2>Kontak</h2>
+            <p>Alamat: Jalan Contoh No. 123, Jakarta</p>
+            <p>Nomor Telepon: <a href="tel:+621234567890">+62 123-456-7890</a></p>
+            <p>Facebook: <a href="https://facebook.com/yourprofile" target="_blank">facebook.com/yourprofile</a></p>
+            <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
+            <p>WhatsApp: <a href="https://wa.me/621234567890" target="_blank">+62 123-456-7890</a></p>
+        </div>
+    </div>
+
+    <button onclick="scrollToTop()" class="scroll-to-top">Kembali ke Atas</button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollToProject2() {
+            const targetSection = document.getElementById('project2');
+
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
